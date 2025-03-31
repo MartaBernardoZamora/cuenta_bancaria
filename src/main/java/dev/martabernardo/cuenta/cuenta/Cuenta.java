@@ -37,4 +37,8 @@ public class Cuenta {
         saldo += interesMensual;
     }
 
+    public void getExtractoMensual() {
+        calcularInteresMensual();
+    }
+
 }
