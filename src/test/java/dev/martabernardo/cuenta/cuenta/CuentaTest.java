@@ -14,4 +14,11 @@ public class CuentaTest {
         cuenta.consignar(50f);
         assertThat(cuenta.getSaldo(), is(150.00f));
     }
+    @Test
+    @DisplayName("test retirar")
+    void testRetirar() {
+        Cuenta cuenta = new Cuenta(100f);
+        cuenta.retirar(50f);
+        assertThat(cuenta.getSaldo(), is(50.00f));
+    }
 }
