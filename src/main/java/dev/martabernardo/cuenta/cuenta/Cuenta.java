@@ -24,6 +24,9 @@ public class Cuenta {
     }
 
     public void retirar(float retirada) {
+        if (retirada > saldo) {
+            throw new IllegalArgumentException("Saldo insuficiente");
+        }
         saldo -= retirada;
     }
 
