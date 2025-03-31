@@ -48,4 +48,9 @@ public class CuentaTest {
         cuenta.getExtractoMensual();
         assertThat(cuenta.getSaldo(), is(100.67f));
     }
+    @Test
+    @DisplayName("test generar numero de cuenta")
+    void testGenerarNumeroCuenta() {
+        assertThat(cuenta.generarNumeroCuenta().length(), is(10));
+    }
 }
