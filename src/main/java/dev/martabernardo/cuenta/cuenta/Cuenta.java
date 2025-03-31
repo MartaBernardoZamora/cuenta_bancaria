@@ -15,16 +15,20 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "cuenta")
+@Table(name = "cuentas")
 public class Cuenta {
     @Id
-    @Column(unique = true, length = 10, nullable = false)
+    @Column(name = "numero_cuenta", unique = true, length = 10, nullable = false)
     protected String numeroCuenta;
 
     protected float saldo;
+
+    @Column(name = "tasa_anual")
     protected float tasaAnual;
     protected int consignaciones;
     protected int retiradas;
+
+    @Column(name = "comision_mensual")
     protected float comisionMensual;
 
     public Cuenta(float saldo, float tasaAnual) {
@@ -55,6 +59,7 @@ public class Cuenta {
     }
 
     public void getExtractoMensual() {
+        saldo -= comisionMensual;
         calcularInteresMensual();
     }
     public String generarNumeroCuenta() {
