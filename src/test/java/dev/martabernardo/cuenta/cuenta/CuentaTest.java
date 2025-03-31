@@ -42,4 +42,10 @@ public class CuentaTest {
         cuenta.calcularInteresMensual();
         assertThat(cuenta.getSaldo(), is(100.67f));
     }
+    @Test
+    @DisplayName("test extracto mensual")
+    void testGetExtractoMensual() {
+        cuenta.getExtractoMensual();
+        assertThat(cuenta.getSaldo(), is(100.67f));
+    }
 }
