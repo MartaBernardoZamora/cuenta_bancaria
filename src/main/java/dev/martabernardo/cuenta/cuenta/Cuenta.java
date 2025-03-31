@@ -14,9 +14,11 @@ import lombok.Getter;
 public class Cuenta {
 
     protected float saldo;
+    protected float tasaAnual;
 
-    public Cuenta(float saldo) {
+    public Cuenta(float saldo, float tasaAnual) {
         this.saldo = saldo;
+        this.tasaAnual = 0.08f;
     }
 
     public void consignar(float consigna) {
@@ -28,6 +30,11 @@ public class Cuenta {
             throw new IllegalArgumentException("Saldo insuficiente");
         }
         saldo -= retirada;
+    }
+
+    public void calcularInteresMensual() {
+        float interesMensual = Math.round(tasaAnual / 12 * saldo * 100f)/100f;
+        saldo += interesMensual;
     }
 
 }
