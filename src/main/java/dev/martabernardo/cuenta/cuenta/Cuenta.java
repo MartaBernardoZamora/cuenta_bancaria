@@ -25,6 +25,7 @@ public class Cuenta {
     protected float tasaAnual;
     protected int consignaciones;
     protected int retiradas;
+    protected float comisionMensual;
 
     public Cuenta(float saldo, float tasaAnual) {
         this.numeroCuenta = generarNumeroCuenta();
@@ -32,6 +33,7 @@ public class Cuenta {
         this.tasaAnual = 0.08f;
         this.consignaciones = 0;
         this.retiradas = 0;
+        this.comisionMensual = 0.00f;
     }
 
     public void consignar(float consigna) {
