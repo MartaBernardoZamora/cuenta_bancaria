@@ -59,5 +59,10 @@ public class CuentaTest {
         cuenta.consignar(50f);
         assertThat(cuenta.getConsignaciones(), is(1));
     }
-
+    @Test
+    @DisplayName("test contar retiradas")
+    void testContarRetiradas() {
+        cuenta.retirar(50f);
+        assertThat(cuenta.getRetiradas(), is(1));
+    }
 }
