@@ -14,7 +14,7 @@ public class CuentaTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        cuenta = new Cuenta(100f);
+        cuenta = new Cuenta(100f, 0.08f);
     }
     @Test
     @DisplayName("test consignar")
@@ -35,5 +35,11 @@ public class CuentaTest {
             cuenta.retirar(150f);
         });
         assertThat(cuenta.getSaldo(), is(100.00f));
+    }
+    @Test
+    @DisplayName("test calcular interés mensual")
+    void testCalcularInteresMensual() {
+        cuenta.calcularInteresMensual();
+        assertThat(cuenta.getSaldo(), is(100.67f));
     }
 }
