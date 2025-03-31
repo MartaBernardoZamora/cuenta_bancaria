@@ -23,5 +23,8 @@ public class Cuenta {
         saldo += consigna;
     }
 
+    public void retirar(float retirada) {
+        saldo -= retirada;
+    }
 
 }
