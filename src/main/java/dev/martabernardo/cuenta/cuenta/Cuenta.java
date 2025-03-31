@@ -24,12 +24,14 @@ public class Cuenta {
     protected float saldo;
     protected float tasaAnual;
     protected int consignaciones;
+    protected int retiradas;
 
     public Cuenta(float saldo, float tasaAnual) {
         this.numeroCuenta = generarNumeroCuenta();
         this.saldo = saldo;
         this.tasaAnual = 0.08f;
         this.consignaciones = 0;
+        this.retiradas = 0;
     }
 
     public void consignar(float consigna) {
@@ -42,6 +44,7 @@ public class Cuenta {
             throw new IllegalArgumentException("Saldo insuficiente");
         }
         saldo -= retirada;
+        retiradas++;
     }
 
     public void calcularInteresMensual() {
@@ -57,5 +60,5 @@ public class Cuenta {
         long numero = 1000000000L + (long)(random.nextDouble() * 8999999999L);
         return String.valueOf(numero);
     }
-    
+
 }
