@@ -23,15 +23,18 @@ public class Cuenta {
 
     protected float saldo;
     protected float tasaAnual;
+    protected int consignaciones;
 
     public Cuenta(float saldo, float tasaAnual) {
         this.numeroCuenta = generarNumeroCuenta();
         this.saldo = saldo;
         this.tasaAnual = 0.08f;
+        this.consignaciones = 0;
     }
 
     public void consignar(float consigna) {
         saldo += consigna;
+        consignaciones++;
     }
 
     public void retirar(float retirada) {
@@ -54,5 +57,5 @@ public class Cuenta {
         long numero = 1000000000L + (long)(random.nextDouble() * 8999999999L);
         return String.valueOf(numero);
     }
-
+    
 }
