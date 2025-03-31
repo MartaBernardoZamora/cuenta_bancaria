@@ -65,4 +65,9 @@ public class CuentaTest {
         cuenta.retirar(50f);
         assertThat(cuenta.getRetiradas(), is(1));
     }
+    @Test
+    @DisplayName("test calcular comisión mensual")
+    void testCalcularComisionMensual() {
+        assertThat(cuenta.getComisionMensual(), is(0.00f));
+    }
 }
