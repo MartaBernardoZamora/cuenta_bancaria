@@ -53,4 +53,11 @@ public class CuentaTest {
     void testGenerarNumeroCuenta() {
         assertThat(cuenta.generarNumeroCuenta().length(), is(10));
     }
+    @Test
+    @DisplayName("test contar consignaciones")
+    void testContarConsignaciones() {
+        cuenta.consignar(50f);
+        assertThat(cuenta.getConsignaciones(), is(1));
+    }
+
 }
